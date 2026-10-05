@@ -19,7 +19,7 @@ mkdir -p "$OUT"
 bash scripts/build.sh release > "$OUT/build.log" 2>&1 || { echo "build: FAILED (see $OUT/build.log)"; exit 1; }
 APP="../dist/Backdrop.app/Contents/MacOS/Backdrop"
 
-LOOKS="studio softbloom mesh fade paper riso wash ink halo aurora bloom leak bokeh rays fluted frost contours silk linefield ridgelines dunes smoke marble chrome lava cells halftone dotgrid matrix"
+LOOKS="studio softbloom mesh fade solid linear radial conic paper riso wash ink halo aurora bloom leak bokeh rays caustics fluted frost iris contours silk linefield ridgelines dunes smoke marble chrome lava cells halftone dotgrid matrix"
 failures=0
 count=0
 for look in $LOOKS; do
