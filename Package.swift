@@ -6,6 +6,7 @@
 //   BackdropKit  generative background engine (Metal, analytic, loopable)
 //   StageKit     the shared stage: renderer, scene engine and export
 //   StudioKit    shared design language, controls and window chrome
+//   Updates      in-app updates from GitHub releases (Sparkle)
 //
 //   Backdrop     the background studio
 //
@@ -18,6 +19,11 @@ let settings: [SwiftSetting] = [
     .swiftLanguageMode(.v5),
 ]
 
+// The app loads Sparkle from Contents/Frameworks, where scripts/build.sh puts it.
+let appLinker: [LinkerSetting] = [
+    .unsafeFlags(["-Xlinker", "-rpath", "-Xlinker", "@executable_path/../Frameworks"]),
+]
+
 let package = Package(
     name: "Backdrop",
     platforms: [.macOS(.v14)],
@@ -28,11 +34,16 @@ let package = Package(
         .library(name: "StudioKit", targets: ["StudioKit"]),
         .executable(name: "Backdrop", targets: ["BackdropApp"]),
     ],
+    dependencies: [
+        // In-app updates from GitHub releases (Updates module).
+        .package(url: "https://github.com/sparkle-project/Sparkle", exact: "2.10.0"),
+    ],
     targets: [
         .target(name: "RenderCore", swiftSettings: settings),
         .target(name: "BackdropKit", dependencies: ["RenderCore"], swiftSettings: settings),
         .target(name: "StageKit", dependencies: ["RenderCore", "BackdropKit"], swiftSettings: settings),
         .target(name: "StudioKit", dependencies: ["RenderCore", "BackdropKit", "StageKit"], swiftSettings: settings),
-        .executableTarget(name: "BackdropApp", dependencies: ["StudioKit"], swiftSettings: settings),
+        .target(name: "Updates", dependencies: [.product(name: "Sparkle", package: "Sparkle")], swiftSettings: settings),
+        .executableTarget(name: "BackdropApp", dependencies: ["StudioKit", "Updates"], swiftSettings: settings, linkerSettings: appLinker),
     ]
 )
