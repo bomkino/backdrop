@@ -23,6 +23,12 @@ Download the disk image from the [Releases](https://github.com/bomkino/backdrop/
 
 The app is signed ad hoc and not notarized, so the first time you open it, macOS stops it: open System Settings › Privacy & Security, scroll down and click **Open Anyway** (Control-click › Open no longer works from macOS Sequoia on). Installed from Terminal (`curl` or `gh release download`), it opens straight away.
 
+**From Terminal, or by asking Codex or Claude to run it:** `docs/install-latest.sh` installs the latest Backdrop, Drift 2 and Galileo 2 in one go, checking every download's checksum and signature and moving older copies to the Trash:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/bomkino/backdrop/main/docs/install-latest.sh | bash
+```
+
 ## Updates
 
 From 2.2.0, Backdrop checks this repository's releases once a day and offers new versions itself (**Check for Updates…** in the app menu checks now). Updates are signed with pitch.dog's EdDSA key and anything else is refused; no Apple developer account is involved. How releases are made and signed is in `docs/UPDATES.md`.
