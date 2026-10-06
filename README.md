@@ -10,11 +10,12 @@ Backdrop is a native Mac app (SwiftUI and Metal) from pitch.dog. It shares its e
 
 - A new window opens on Soft Bloom in 9:16, already playing. Rest the pointer on any of the 35 looks, in 8 families, to audition it on the stage; click to use it. A palette you chose yourself stays when you switch looks.
 - The inspector sets the palette (or borrows one from a picture), the shape, the film finish and the loop length. Variations of the current look sit beside the stage; click one to use it.
-- **Preview a slide** lays a sample slide over the background, to judge it behind real work.
+- **Preview a slide** lays a sample slide over the background on the stage, to judge it behind real work; exports are always the background alone.
 - Scroll with two fingers over the stage to move through the loop; playback carries on when you let go.
 - **Save to Library** keeps the look, with its film finish and loop length, for Drift and Galileo, where it appears among their backgrounds. **Library** lists your saved looks to use again, rename or move to the Trash.
 - The toolbar switches between 9:16, 4:5, 1:1 and 16:9; Cinema and 4K are in the menu beside it.
-- Export writes MP4, HEVC, ProRes, numbered PNG frames or a still. Every look loops seamlessly and previews exactly as it exports.
+- **Export** (⌘E) writes MP4, HEVC, ProRes, numbered PNG frames or a still, named with the look, its palette and its loop length. Every look loops seamlessly and previews exactly as it exports; the stage holds still while the export runs.
+- ⌘P plays and pauses, ⌘← goes to the start, and ⇧⌘R makes a new variation of the look.
 
 ## Installing a release
 

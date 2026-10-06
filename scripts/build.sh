@@ -31,7 +31,7 @@ mkdir -p "$DIST"
 
 for APP in "${APPS[@]}"; do
   case "$APP" in
-    Backdrop) BUNDLE_NAME="Backdrop";  BUNDLE_ID="dog.pitch.backdrop"; UTI="dog.pitch.backdrop.look";    EXT="backdrop"; DOC_NAME="Backdrop Look";   VERSION="2.0.0" ;;
+    Backdrop) BUNDLE_NAME="Backdrop";  BUNDLE_ID="dog.pitch.backdrop"; UTI="dog.pitch.backdrop.look";    EXT="backdrop"; DOC_NAME="Backdrop Look";   VERSION="2.1.0" ;;
     *) echo "unknown app $APP"; exit 2 ;;
   esac
 
