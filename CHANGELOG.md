@@ -2,6 +2,15 @@
 
 Notable user-visible changes to Backdrop. Backdrop shares its engine with Drift 2 and Galileo 2, whose repositories record their own changes.
 
+## 2.2.0 — 6 October 2026
+
+**Updates itself.** Backdrop now checks its GitHub releases once a day and offers new versions in the app: read what's new, click Install, and it relaunches on the new version a few seconds later, with no second trip to Privacy & Security. **Check for Updates…** in the app menu checks now.
+
+- Updates are signed with pitch.dog's own key, and anything not signed with it is refused. No Apple developer account is needed.
+- Install this version by hand once; every version after it arrives by itself.
+- Install notes now match current macOS: the first launch of a downloaded app needs System Settings › Privacy & Security › **Open Anyway** (Control-click › Open no longer works). If macOS offers to install from the disk image and says "Could not install", drag the app onto Applications instead. A ZIP is on the release page too.
+- Uses Sparkle 2.10.0 (MIT licence, credited in NOTICES and inside the app).
+
 ## 2.1.0 — 6 October 2026
 
 **Fixes and speed for 1080 × 1920 work; the looks keep their pixels.**
